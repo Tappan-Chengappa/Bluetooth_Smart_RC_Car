@@ -149,31 +149,7 @@ void loop()
         Serial.println("Turning right");
         bt.write("Turning right");
         }
-        if (Rvalue==HIGH and Lvalue==HIGH)
-        {
-          stop();
-          delay(150);
-          Serial.println("Parking available,requesting to park");
-          bt.write("Parking available, Agree to park?");
-          if(value=='x')
-          {
-            delay(150);
-            left();
-            delay(2000);
-            forward();
-            delay(600);
-            stop();
-            bt.write("Vehical halt");
-            value = 'n';
-
-          }
-          else if(value=='y')
-          {
-            delay(150);
-            forward();
-            delay(400);
-            value = 'm';
-          }
+       
         }
       }  
       
@@ -295,10 +271,5 @@ void loop()
 
 
 }
-
-
-
-
-  
 
 }
